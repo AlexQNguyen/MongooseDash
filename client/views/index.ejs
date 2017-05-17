@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Otters Dashboard</title>
+  </head>
+  <body>
+    <h1>Otter's that have Joined</h1>
+
+
+    <% for(var i = 0; i < otter.length; i++){ %>
+    <ul>
+      <li><a href='otters/<%= otter[i].id %>'><%= otter[i].name %></a>
+        <form action='/otters/destroy/<%= otter[i].id%>' method='post'>
+        <input type='submit' value='Delete' />
+      </form>
+      </li>
+    </ul>
+    <%  } %>
+    <a href='/otters/new'>Add an Otter</a>
+  </body>
+</html>
